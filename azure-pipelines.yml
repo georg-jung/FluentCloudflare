@@ -1,0 +1,36 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    arguments: '--configuration Release'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    arguments: '-c Release --output $(Build.ArtifactStagingDirectory)/CloudflareDns-publish'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    arguments: '-c Release --output $(Build.ArtifactStagingDirectory)/CloudflareDns-nupkg'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+  
