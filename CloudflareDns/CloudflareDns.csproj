@@ -4,6 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Cloudflare</RootNamespace>
+    <PackageId>CloudflareDns</PackageId>
+    <Authors>Georg Jung</Authors>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryUrl>https://github.com/georg-jung/CloudflareDns</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/georg-jung/CloudflareDns</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageDescription>A fluent .Net Standard 2.0 wrapper for the Cloudflare API v4.</PackageDescription>
+    <PackageTags>fluent cloudflare cloud rest client http json</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
