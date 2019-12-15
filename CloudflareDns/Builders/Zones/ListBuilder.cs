@@ -14,9 +14,9 @@ namespace Cloudflare.Builders.Zones
 {
     internal class ListBuilder : ListBuilderBase<IZonesListSyntax, List<Zone>>, IZonesListSyntax
     {
-        private protected override int MaximumEntriesPerPage => 50;
+        protected override int MaximumEntriesPerPage => 50;
 
-        private protected override IZonesListSyntax GetThis() => this;
+        protected override IZonesListSyntax GetThis() => this;
 
         internal ListBuilder(IRequestBuilderFactory context) : base(context)
         {

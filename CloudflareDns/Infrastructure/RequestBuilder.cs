@@ -12,7 +12,7 @@ namespace Cloudflare.Infrastructure
     {
         public Uri BaseUrl { get; set; }
         public List<string> UrlSegments { get; } = new List<string>();
-        public ExpandoObject QueryParameters { get; } = new ExpandoObject();
+        public ExpandoObject QueryStringParameters { get; } = new ExpandoObject();
         public ExpandoObject Body { get; } = new ExpandoObject();
         public Dictionary<string, string> Headers { get; } = new Dictionary<string, string>();
         public HttpMethod Method { get; set; } = HttpMethod.Get;
@@ -20,7 +20,7 @@ namespace Cloudflare.Infrastructure
         public HttpRequestMessage Build()
         {
             var uri = BaseUrl.Append(UrlSegments);
-            uri = uri.Append($"?{QueryParameters.ToQueryString()}");
+            uri = uri.Append($"?{QueryStringParameters.ToQueryString()}");
             var req = new HttpRequestMessage(Method, uri);
             foreach ((var header, var value) in Headers)
             {

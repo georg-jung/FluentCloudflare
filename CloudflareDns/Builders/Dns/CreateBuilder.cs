@@ -1,5 +1,7 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
+﻿using Cloudflare.Abstractions.Builders.Dns;
+using Cloudflare.Abstractions.Infrastructure;
 using Cloudflare.Api;
+using Cloudflare.Api.Entities;
 using Cloudflare.Infrastructure;
 using Cloudflare.Infrastructure.Extensions;
 using System;
@@ -10,60 +12,38 @@ using System.Text;
 
 namespace Cloudflare.Builders.Dns
 {
-    public class CreateBuilder : IRequestBuilderFactory, IFluentSyntax
+    internal class CreateBuilder : ApiMethod<DnsRecord>, IDnsCreateSyntax
     {
-        dynamic parameters = new ExpandoObject();
-        private readonly IRequestBuilderFactory context;
-
-        internal CreateBuilder(IRequestBuilderFactory context)
-        {
-            this.context = context;
-        }
-
         /// <param name="type">DNS record type</param>
         /// <param name="name">DNS record name</param>
         /// <param name="content">DNS record content</param>
-        public CreateBuilder(DnsRecordType type, string name, string content)
+        public CreateBuilder(IRequestBuilderFactory context, DnsRecordType type, string name, string content) : base(context)
         {
-            parameters.type = type.ToApiValue();
-            parameters.name = name;
-            parameters.content = content;
+            Method = HttpMethod.Post;
+            Body.type = type.ToApiValue();
+            Body.name = name;
+            Body.content = content;
         }
 
-        /// <summary>
-        /// Time to live for DNS record. Value of 1 is 'automatic'
-        /// </summary>
-        public CreateBuilder Ttl(int seconds)
+        public IDnsCreateSyntax Ttl(int seconds)
         {
-            parameters.ttl = seconds;
+            Body.ttl = seconds;
             return this;
         }
 
-        /// <summary>
-        /// Used with some records like MX and SRV to determine priority. If you do not supply a priority for an MX record, a default value of 0 will be set
-        /// </summary>
-        /// <param name="priority">0 - 65535</param>
-        public CreateBuilder Priority(ushort priority)
+        public IDnsCreateSyntax Priority(ushort priority)
         {
-            parameters.priority = priority;
+            Body.priority = priority;
             return this;
         }
 
         /// <summary>
         /// Whether the record is receiving the performance and security benefits of Cloudflare
         /// </summary>
-        public CreateBuilder Proxied(bool throughCloudflare)
+        public IDnsCreateSyntax Proxied(bool throughCloudflare)
         {
-            parameters.proxied = throughCloudflare;
+            Body.proxied = throughCloudflare;
             return this;
-        }
-
-        IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()
-        {
-            var builder = context.CreateRequestBuilder();
-            builder.Method = HttpMethod.Post;
-            builder.Body.SetValues((ExpandoObject)parameters);
-            return builder;
         }
     }
 }

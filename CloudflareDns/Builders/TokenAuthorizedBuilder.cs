@@ -20,10 +20,10 @@ namespace Cloudflare.Builders
 
         public async Task<Response<TokenStatus>> VerifyToken(HttpClient client, CancellationToken cancellationToken = default)
         {
-            return await (new VerifyTokenBuilder(this)).GetAsync(client, cancellationToken).ConfigureAwait(false);
+            return await (new VerifyTokenBuilder(this)).CallAsync(client, cancellationToken).ConfigureAwait(false);
         }
 
-        private class VerifyTokenBuilder : GetMethod<TokenStatus>
+        private class VerifyTokenBuilder : ApiMethodBase<TokenStatus>
         {
             private readonly IRequestBuilderFactory context;
 

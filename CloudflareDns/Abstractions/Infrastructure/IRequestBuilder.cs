@@ -11,7 +11,7 @@ namespace Cloudflare.Abstractions.Infrastructure
         ExpandoObject Body { get; }
         Dictionary<string, string> Headers { get; }
         HttpMethod Method { get; set; }
-        ExpandoObject QueryParameters { get; }
+        ExpandoObject QueryStringParameters { get; }
         List<string> UrlSegments { get; }
 
         HttpRequestMessage Build();

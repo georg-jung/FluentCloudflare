@@ -13,18 +13,15 @@ using System.Threading.Tasks;
 
 namespace Cloudflare.Builders
 {
-    public abstract class ListBuilderBase<TBuilder, TEntity> : GetMethod<TEntity>,
+    public abstract class ListBuilderBase<TBuilder, TEntity> : ApiMethod<TEntity>,
         IPaginatedSyntax<TBuilder>, IHasResultFilterStrategySyntax<TBuilder>
     {
-        protected dynamic QueryStringParameters { get; } = new ExpandoObject();
-        protected IDictionary<string, object> QueryStringParametersDict => (IDictionary<string, object>)QueryStringParameters;
-        private protected IRequestBuilderFactory Context { get; }
-        abstract private protected int MaximumEntriesPerPage { get; }
-        abstract private protected TBuilder GetThis();
+        abstract protected int MaximumEntriesPerPage { get; }
+        abstract protected TBuilder GetThis();
 
-        internal ListBuilderBase(IRequestBuilderFactory context)
+        internal ListBuilderBase(IRequestBuilderFactory context) : base(context)
         {
-            Context = context;
+            Method = HttpMethod.Get;
         }
 
         #region "Paging"
@@ -58,14 +55,6 @@ namespace Cloudflare.Builders
         {
             QueryStringParameters.match = type.ToApiValue();
             return GetThis();
-        }
-
-        private protected override IRequestBuilder CreateRequestBuilder()
-        {
-            var builder = Context.CreateRequestBuilder();
-            builder.Method = HttpMethod.Get;
-            builder.QueryParameters.SetValues((ExpandoObject)QueryStringParameters);
-            return builder;
         }
     }
 }

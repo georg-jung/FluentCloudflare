@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Cloudflare.Abstractions.Infrastructure
 {
-    public interface IGetMethod<TEntity>
+    public interface IApiMethod<TEntity>
     {
-        Task<Response<TEntity>> GetAsync(HttpClient client, CancellationToken cancellationToken = default);
+        Task<Response<TEntity>> CallAsync(HttpClient client, CancellationToken cancellationToken = default);
     }
 }

@@ -23,6 +23,10 @@ namespace Cloudflare.Api.Entities
         public string ZoneName { get; set; }
         public DateTime ModifiedOn { get; set; }
         public DateTime CreatedOn { get; set; }
+        /// <summary>
+        /// Whether this record can be modified/deleted (true means it's managed by Cloudflare)
+        /// </summary>
+        public bool Locked { get; set; }
         public DnsRecordMeta Meta { get; set; }
     }
 }
