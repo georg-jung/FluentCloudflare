@@ -10,7 +10,7 @@ namespace Cloudflare.Infrastructure
 {
     internal class RequestBuilder : IRequestBuilder
     {
-        public string BaseUrl { get; set; }
+        public Uri BaseUrl { get; set; }
         public List<string> UrlSegments { get; } = new List<string>();
         public ExpandoObject QueryParameters { get; } = new ExpandoObject();
         public ExpandoObject Body { get; } = new ExpandoObject();
@@ -19,7 +19,7 @@ namespace Cloudflare.Infrastructure
 
         public HttpRequestMessage Build()
         {
-            var uri = new Uri(BaseUrl).Append(UrlSegments);
+            var uri = BaseUrl.Append(UrlSegments);
             uri = uri.Append($"?{QueryParameters.ToQueryString()}");
             var req = new HttpRequestMessage(Method, uri);
             foreach ((var header, var value) in Headers)

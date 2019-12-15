@@ -18,7 +18,9 @@ namespace Cloudflare.Infrastructure
         {
             var res = await ExecuteAsync(client, cancellationToken).ConfigureAwait(false);
             using var stream = await res.Content.ReadAsStreamAsync().ConfigureAwait(false);
-            return stream.DeserializeJson<Response<TEntity>>();
+            var resp = stream.DeserializeJson<Response<TEntity>>();
+            resp.StatusCode = res.StatusCode;
+            return resp;
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Cloudflare.Builders.Zones
 {
-    public class ListBuilder : ListBuilderBase<IZonesListSyntax, List<Zone>>, IZonesListSyntax
+    internal class ListBuilder : ListBuilderBase<IZonesListSyntax, List<Zone>>, IZonesListSyntax
     {
         private protected override int MaximumEntriesPerPage => 50;
 

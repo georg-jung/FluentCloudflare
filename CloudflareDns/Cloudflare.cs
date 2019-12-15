@@ -11,11 +11,11 @@ namespace Cloudflare
     public static class Cloudflare
     {
         private const string DefaultEndpointUrl = "https://api.cloudflare.com/client/v4/";
-        public static string EndpointUrl { get; set; } = DefaultEndpointUrl;
+        public static Uri EndpointUrl { get; set; } = new Uri(DefaultEndpointUrl);
 
-        public static IAuthorizedSyntax WithToken(string token)
+        public static ITokenAuthorizedSyntax WithToken(string token)
         {
-            return new AuthorizedBuilder(new EndpointFactory(), token);
+            return new TokenAuthorizedBuilder(new EndpointFactory(), token);
         }
 
         public static IAuthorizedSyntax WithKey(string apiKey, string email)

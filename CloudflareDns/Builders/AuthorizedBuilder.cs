@@ -1,14 +1,19 @@
 ﻿using Cloudflare.Abstractions.Builders;
 using Cloudflare.Abstractions.Builders.Zones;
 using Cloudflare.Abstractions.Infrastructure;
+using Cloudflare.Api;
 using Cloudflare.Builders.Zones;
+using Cloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Cloudflare.Builders
 {
-    public sealed class AuthorizedBuilder : IAuthorizedSyntax, IRequestBuilderFactory
+    public class AuthorizedBuilder : IAuthorizedSyntax, IRequestBuilderFactory
     {
         private readonly IRequestBuilderFactory context;
         private readonly string apiKey;

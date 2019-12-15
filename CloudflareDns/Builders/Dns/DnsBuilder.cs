@@ -6,22 +6,12 @@ using System.Text;
 
 namespace Cloudflare.Builders.Dns
 {
-    internal class DnsBuilder : IDnsSyntax, IRequestBuilderFactory
+    internal class DnsBuilder : UrlExtendingBuilder, IDnsSyntax
     {
-        private readonly IRequestBuilderFactory context;
-
-        internal DnsBuilder(IRequestBuilderFactory context)
+        internal DnsBuilder(IRequestBuilderFactory context) : base(context, "dns_records")
         {
-            this.context = context;
         }
 
         public IDnsListSyntax List() => new ListBuilder(this);
-
-        IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()
-        {
-            var builder = context.CreateRequestBuilder();
-            builder.UrlSegments.Add("dns_records");
-            return builder;
-        }
     }
 }

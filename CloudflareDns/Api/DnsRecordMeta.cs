@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Api.Entities
+namespace Cloudflare.Api
 {
     public class DnsRecordMeta
     {
-        bool AutoAdded { get; set; }
-        string Source { get; set; }
+        public bool AutoAdded { get; set; }
+        public string Source { get; set; }
     }
 }

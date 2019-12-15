@@ -2,7 +2,6 @@
 using Cloudflare.Api;
 using Cloudflare.Api.Entities;
 using Cloudflare.Infrastructure.Extensions;
-using Cloudflare.Api;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -12,7 +11,7 @@ using Cloudflare.Abstractions.Infrastructure;
 
 namespace Cloudflare.Builders.Dns
 {
-    public class ListBuilder : ListBuilderBase<IDnsListSyntax, List<DnsRecord>>, IDnsListSyntax
+    internal class ListBuilder : ListBuilderBase<IDnsListSyntax, List<DnsRecord>>, IDnsListSyntax
     {
         private protected override int MaximumEntriesPerPage => 100;
 

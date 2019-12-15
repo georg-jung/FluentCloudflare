@@ -7,22 +7,12 @@ using System.Text;
 
 namespace Cloudflare.Builders.Zones
 {
-    public class ZonesBuilder : IZonesSyntax, IRequestBuilderFactory
+    internal class ZonesBuilder : UrlExtendingBuilder, IZonesSyntax
     {
-        private readonly IRequestBuilderFactory context;
-
-        internal ZonesBuilder(IRequestBuilderFactory context)
+        internal ZonesBuilder(IRequestBuilderFactory context) : base(context, "zones")
         {
-            this.context = context;
         }
 
         public IZonesListSyntax List() => new ListBuilder(this);
-
-        IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()
-        {
-            var builder = context.CreateRequestBuilder();
-            builder.UrlSegments.Add("zones");
-            return builder;
-        }
     }
 }
