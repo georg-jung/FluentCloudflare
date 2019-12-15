@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudflareDns", "CloudflareDns\CloudflareDns.csproj", "{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloudflare.Test", "Cloudflare.Test\Cloudflare.Test.csproj", "{182C09EB-BF0C-4093-B287-DDD1EDD564D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182C09EB-BF0C-4093-B287-DDD1EDD564D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182C09EB-BF0C-4093-B287-DDD1EDD564D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182C09EB-BF0C-4093-B287-DDD1EDD564D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182C09EB-BF0C-4093-B287-DDD1EDD564D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09F3D023-02D1-4CE7-A45B-870AF3606789}
+	EndGlobalSection
+EndGlobal
