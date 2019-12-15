@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Cloudflare</RootNamespace>
-    <PackageId>CloudflareDns</PackageId>
+    <PackageId>FluentCloudflare</PackageId>
     <Authors>Georg Jung</Authors>
     <Version>0.1.0</Version>
   </PropertyGroup>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudflareDns", "CloudflareDns\CloudflareDns.csproj", "{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentCloudflare", "FluentCloudflare\FluentCloudflare.csproj", "{CD7EDFC0-F67A-4D55-8DCB-7736BBC677ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloudflare.Test", "Cloudflare.Test\Cloudflare.Test.csproj", "{182C09EB-BF0C-4093-B287-DDD1EDD564D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentCloudflare.Test", "FluentCloudflare.Test\FluentCloudflare.Test.csproj", "{182C09EB-BF0C-4093-B287-DDD1EDD564D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

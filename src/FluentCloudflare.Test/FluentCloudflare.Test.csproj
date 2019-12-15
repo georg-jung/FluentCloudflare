@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CloudflareDns\CloudflareDns.csproj" />
+    <ProjectReference Include="..\FluentCloudflare\FluentCloudflare.csproj" />
   </ItemGroup>
 
 </Project>
