@@ -8,7 +8,7 @@ using System.Text;
 
 namespace FluentCloudflare.Builders
 {
-    public class ZoneBuilder : IZoneSyntax, IRequestBuilderFactory
+    internal class ZoneBuilder : IZoneSyntax, IRequestBuilderFactory
     {
         private readonly IRequestBuilderFactory context;
         private readonly string identifier;

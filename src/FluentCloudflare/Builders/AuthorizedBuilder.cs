@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace FluentCloudflare.Builders
 {
-    public class AuthorizedBuilder : IAuthorizedSyntax, IRequestBuilderFactory
+    internal class AuthorizedBuilder : IAuthorizedSyntax, IRequestBuilderFactory
     {
         private readonly IRequestBuilderFactory context;
         private readonly string apiKey;
