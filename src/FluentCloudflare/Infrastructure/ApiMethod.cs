@@ -8,7 +8,7 @@ using System.Text;
 
 namespace FluentCloudflare.Infrastructure
 {
-    public class ApiMethod<TEntity> : ApiMethodBase<TEntity>
+    internal class ApiMethod<TEntity> : ApiMethodBase<TEntity>
     {
         private protected IRequestBuilderFactory Context { get; }
         

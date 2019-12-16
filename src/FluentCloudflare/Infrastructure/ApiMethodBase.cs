@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FluentCloudflare.Infrastructure
 {
-    public abstract class ApiMethodBase<TEntity> : IRequestBuilderFactory, IApiMethod<TEntity>
+    internal abstract class ApiMethodBase<TEntity> : IRequestBuilderFactory, IApiMethod<TEntity>
     {
         IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()
             => CreateRequestBuilder();
