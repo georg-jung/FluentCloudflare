@@ -13,18 +13,18 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    arguments: '--configuration Release'
+    arguments: 'src/FluentCloudflare.sln --configuration Release'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: false
-    arguments: '-c Release --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-publish'
+    arguments: 'src/FluentCloudflare.sln -c Release --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-publish'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    arguments: '-c Release --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-nupkg'
+    arguments: 'src/FluentCloudflare.sln -c Release --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-nupkg'
 
 - task: PublishPipelineArtifact@1
   inputs:
