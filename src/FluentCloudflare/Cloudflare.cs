@@ -1,6 +1,8 @@
 ﻿using Cloudflare.Abstractions.Builders;
+using Cloudflare.Abstractions.Builders.IPs;
 using Cloudflare.Abstractions.Infrastructure;
 using Cloudflare.Builders;
+using Cloudflare.Builders.IPs;
 using Cloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,8 @@ namespace Cloudflare
         {
             return new AuthorizedBuilder(new EndpointFactory(), apiKey, email);
         }
+
+        public static IIPsSyntax IPs => new IPsBuilder(new EndpointFactory());
 
         private class EndpointFactory : IRequestBuilderFactory
         {
