@@ -1,9 +1,9 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders
+namespace FluentCloudflare.Abstractions.Builders
 {
     public interface IListRequestSyntax<TBuilder, TEntity> : 
         IPaginatedSyntax<TBuilder>,

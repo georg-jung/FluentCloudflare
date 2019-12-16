@@ -1,9 +1,9 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Builders
+namespace FluentCloudflare.Builders
 {
     internal class UrlExtendingBuilder : IRequestBuilderFactory
     {

@@ -1,10 +1,10 @@
-﻿using Cloudflare.Infrastructure;
-using Cloudflare.Builders.Zones;
+﻿using FluentCloudflare.Infrastructure;
+using FluentCloudflare.Builders.Zones;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders.Zones
+namespace FluentCloudflare.Abstractions.Builders.Zones
 {
     public interface IZonesSyntax : IFluentSyntax
     {

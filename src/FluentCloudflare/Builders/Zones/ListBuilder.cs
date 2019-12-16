@@ -1,8 +1,8 @@
-﻿using Cloudflare.Abstractions.Builders.Zones;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Abstractions.Builders.Zones;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Cloudflare.Builders.Zones
+namespace FluentCloudflare.Builders.Zones
 {
     internal class ListBuilder : ListBuilderBase<IZonesListSyntax, List<Zone>>, IZonesListSyntax
     {

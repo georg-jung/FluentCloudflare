@@ -1,12 +1,12 @@
-﻿using Cloudflare.Abstractions.Builders.IPs;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Builders.IPs;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 
-namespace Cloudflare.Builders.IPs
+namespace FluentCloudflare.Builders.IPs
 {
     internal class IPsBuilder : UrlExtendingBuilder, IIPsSyntax
     {

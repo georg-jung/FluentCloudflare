@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Api
+namespace FluentCloudflare.Api
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DnsRecordType

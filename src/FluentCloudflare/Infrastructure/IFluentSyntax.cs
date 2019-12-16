@@ -21,7 +21,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Cloudflare.Infrastructure
+namespace FluentCloudflare.Infrastructure
 {
     /// <summary>
     /// The base interface for the fluent API

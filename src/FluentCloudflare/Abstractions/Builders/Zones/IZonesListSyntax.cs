@@ -1,9 +1,9 @@
-﻿using Cloudflare.Api;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Api;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure;
 using System.Collections.Generic;
 
-namespace Cloudflare.Abstractions.Builders.Zones
+namespace FluentCloudflare.Abstractions.Builders.Zones
 {
     public interface IZonesListSyntax : IFluentSyntax, IListRequestSyntax<IZonesListSyntax, List<Zone>>
     {

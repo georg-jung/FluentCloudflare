@@ -1,9 +1,9 @@
-﻿using Cloudflare.Api;
+﻿using FluentCloudflare.Api;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders
+namespace FluentCloudflare.Abstractions.Builders
 {
     public interface IHasResultFilterStrategySyntax<TBuilder>
     {

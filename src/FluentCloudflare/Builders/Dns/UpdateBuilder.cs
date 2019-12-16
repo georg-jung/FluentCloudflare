@@ -1,12 +1,12 @@
-﻿using Cloudflare.Abstractions.Builders.Dns;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api;
+﻿using FluentCloudflare.Abstractions.Builders.Dns;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 
-namespace Cloudflare.Builders.Dns
+namespace FluentCloudflare.Builders.Dns
 {
     internal class UpdateBuilder : ChangeBuilderBase<IDnsUpdateSyntax>, IDnsUpdateSyntax
     {

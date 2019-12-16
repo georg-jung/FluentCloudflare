@@ -1,12 +1,12 @@
-﻿using Cloudflare.Abstractions.Builders;
-using Cloudflare.Abstractions.Builders.Dns;
-using Cloudflare.Abstractions.Builders.Zones;
-using Cloudflare.Abstractions.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Builders;
+using FluentCloudflare.Abstractions.Builders.Dns;
+using FluentCloudflare.Abstractions.Builders.Zones;
+using FluentCloudflare.Abstractions.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Builders
+namespace FluentCloudflare.Builders
 {
     public class ZoneBuilder : IZoneSyntax, IRequestBuilderFactory
     {

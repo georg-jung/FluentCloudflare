@@ -1,10 +1,10 @@
-﻿using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace Cloudflare.Api
+namespace FluentCloudflare.Api
 {
     public class Response<TResult>
     {

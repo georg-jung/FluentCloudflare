@@ -1,10 +1,10 @@
-﻿using Cloudflare.Api;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Api;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders
+namespace FluentCloudflare.Abstractions.Builders
 {
     public interface IPaginatedSyntax<TBuilder> : IFluentSyntax
     {

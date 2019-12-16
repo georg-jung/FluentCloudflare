@@ -1,12 +1,12 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Net.Http;
 using System.Text;
 
-namespace Cloudflare.Infrastructure
+namespace FluentCloudflare.Infrastructure
 {
     public class ApiMethod<TEntity> : ApiMethodBase<TEntity>
     {

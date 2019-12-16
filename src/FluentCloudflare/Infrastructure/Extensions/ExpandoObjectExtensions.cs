@@ -6,7 +6,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Web;
 
-namespace Cloudflare.Infrastructure.Extensions
+namespace FluentCloudflare.Infrastructure.Extensions
 {
     internal static class ExpandoObjectExtensions
     {

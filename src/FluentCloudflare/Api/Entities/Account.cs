@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Api.Entities
+namespace FluentCloudflare.Api.Entities
 {
     public class Account
     {

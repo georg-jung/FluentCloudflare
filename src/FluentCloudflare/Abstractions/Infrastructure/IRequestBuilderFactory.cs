@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Infrastructure
+namespace FluentCloudflare.Abstractions.Infrastructure
 {
     internal interface IRequestBuilderFactory
     {

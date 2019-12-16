@@ -1,15 +1,15 @@
-﻿using Cloudflare.Abstractions.Builders.Dns;
-using Cloudflare.Api;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Abstractions.Builders.Dns;
+using FluentCloudflare.Api;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Net.Http;
 using System.Text;
-using Cloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Abstractions.Infrastructure;
 
-namespace Cloudflare.Builders.Dns
+namespace FluentCloudflare.Builders.Dns
 {
     internal class ListBuilder : ListBuilderBase<IDnsListSyntax, List<DnsRecord>>, IDnsListSyntax
     {

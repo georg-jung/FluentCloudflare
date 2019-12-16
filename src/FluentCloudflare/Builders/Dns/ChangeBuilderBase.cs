@@ -1,16 +1,16 @@
-﻿using Cloudflare.Abstractions.Builders.Dns;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure;
-using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Abstractions.Builders.Dns;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Net.Http;
 using System.Text;
 
-namespace Cloudflare.Builders.Dns
+namespace FluentCloudflare.Builders.Dns
 {
     internal abstract class ChangeBuilderBase<TBuilderSyntax> : ApiMethod<DnsRecord>
     {

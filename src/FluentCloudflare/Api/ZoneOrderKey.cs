@@ -1,9 +1,9 @@
-﻿using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Api
+namespace FluentCloudflare.Api
 {
     public enum ZoneOrderKey
     {

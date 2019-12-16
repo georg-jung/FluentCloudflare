@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
-using CF = Cloudflare;
+using FluentCloudflare;
 
 namespace FluentCloudflare.Test
 {
@@ -15,7 +15,7 @@ namespace FluentCloudflare.Test
         public async Task TestGetIPs()
         {
             using var hc = new HttpClient();
-            var ips = await CF.Cloudflare.IPs.Get().CallAsync(hc);
+            var ips = await Cloudflare.IPs.Get().CallAsync(hc);
             var res = ips.Unpack();
             Assert.Contains(".0/", res.Ipv4Cidrs.First());
             Assert.Contains("::/", res.Ipv6Cidrs.First());

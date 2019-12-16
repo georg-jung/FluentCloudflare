@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Api
+namespace FluentCloudflare.Api
 {
     public class DnsRecordMeta
     {

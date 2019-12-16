@@ -1,4 +1,4 @@
-﻿using Cloudflare.Api;
+﻿using FluentCloudflare.Api;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cloudflare.Abstractions.Builders
+namespace FluentCloudflare.Abstractions.Builders
 {
     public interface ITokenAuthorizedSyntax : IAuthorizedSyntax
     {

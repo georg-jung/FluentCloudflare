@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Infrastructure.Extensions
+namespace FluentCloudflare.Infrastructure.Extensions
 {
     internal static class KeyValuePairExtensions
     {

@@ -1,14 +1,14 @@
-﻿using Cloudflare.Abstractions.Builders.Dns;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Builders.Dns;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 
-namespace Cloudflare.Builders.Dns
+namespace FluentCloudflare.Builders.Dns
 {
     internal class CreateBuilder : ChangeBuilderBase<IDnsCreateSyntax>, IDnsCreateSyntax
     {        

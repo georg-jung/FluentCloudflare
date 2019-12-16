@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace Cloudflare.Infrastructure.Extensions
+namespace FluentCloudflare.Infrastructure.Extensions
 {
     public static class UriExtensions
     {

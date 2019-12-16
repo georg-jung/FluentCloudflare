@@ -1,11 +1,11 @@
-﻿using Cloudflare.Api;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Api;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders.Dns
+namespace FluentCloudflare.Abstractions.Builders.Dns
 {
     public interface IDnsListSyntax : IFluentSyntax, IListRequestSyntax<IDnsListSyntax, List<DnsRecord>>
     {

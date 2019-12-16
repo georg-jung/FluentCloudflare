@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Net.Http;
 
-namespace Cloudflare.Abstractions.Infrastructure
+namespace FluentCloudflare.Abstractions.Infrastructure
 {
     internal interface IRequestBuilder
     {

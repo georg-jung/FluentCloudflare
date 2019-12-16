@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Cloudflare.Infrastructure
+namespace FluentCloudflare.Infrastructure
 {
     public class CloudflareException : Exception
     {

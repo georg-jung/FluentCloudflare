@@ -1,8 +1,8 @@
-﻿using Cloudflare.Abstractions.Builders;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api;
-using Cloudflare.Infrastructure;
-using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Abstractions.Builders;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
+using FluentCloudflare.Infrastructure;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cloudflare.Builders
+namespace FluentCloudflare.Builders
 {
     public abstract class ListBuilderBase<TBuilderSyntax, TEntity> : ApiMethod<TEntity>,
         IPaginatedSyntax<TBuilderSyntax>, IHasResultFilterStrategySyntax<TBuilderSyntax>

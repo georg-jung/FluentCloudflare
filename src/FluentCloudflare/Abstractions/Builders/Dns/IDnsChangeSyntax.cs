@@ -1,10 +1,10 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api.Entities;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders.Dns
+namespace FluentCloudflare.Abstractions.Builders.Dns
 {
     public interface IDnsChangeSyntax<TISyntax> : IApiMethod<DnsRecord>
     {

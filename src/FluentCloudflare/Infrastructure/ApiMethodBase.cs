@@ -1,6 +1,6 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api;
-using Cloudflare.Infrastructure.Extensions;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cloudflare.Infrastructure
+namespace FluentCloudflare.Infrastructure
 {
     public abstract class ApiMethodBase<TEntity> : IRequestBuilderFactory, IApiMethod<TEntity>
     {

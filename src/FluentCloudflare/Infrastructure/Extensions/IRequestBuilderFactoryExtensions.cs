@@ -1,11 +1,11 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Net.Http;
 using System.Text;
 
-namespace Cloudflare.Infrastructure.Extensions
+namespace FluentCloudflare.Infrastructure.Extensions
 {
     internal static class IRequestBuilderFactoryExtensions
     {

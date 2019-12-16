@@ -1,10 +1,10 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders.IPs
+namespace FluentCloudflare.Abstractions.Builders.IPs
 {
     public interface IIPsSyntax : IFluentSyntax
     {

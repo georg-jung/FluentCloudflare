@@ -1,11 +1,11 @@
-﻿using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Api.Entities;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api.Entities;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare.Abstractions.Builders.Dns
+namespace FluentCloudflare.Abstractions.Builders.Dns
 {
     public interface IDnsUpdateSyntax : IFluentSyntax, IDnsChangeSyntax<IDnsUpdateSyntax>
     {

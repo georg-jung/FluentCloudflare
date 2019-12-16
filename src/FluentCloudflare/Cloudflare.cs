@@ -1,14 +1,14 @@
-﻿using Cloudflare.Abstractions.Builders;
-using Cloudflare.Abstractions.Builders.IPs;
-using Cloudflare.Abstractions.Infrastructure;
-using Cloudflare.Builders;
-using Cloudflare.Builders.IPs;
-using Cloudflare.Infrastructure;
+﻿using FluentCloudflare.Abstractions.Builders;
+using FluentCloudflare.Abstractions.Builders.IPs;
+using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Builders;
+using FluentCloudflare.Builders.IPs;
+using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cloudflare
+namespace FluentCloudflare
 {
     public static class Cloudflare
     {
