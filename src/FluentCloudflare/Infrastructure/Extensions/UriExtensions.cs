@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace FluentCloudflare.Infrastructure.Extensions
 {
-    public static class UriExtensions
+    internal static class UriExtensions
     {
         public static Uri Append(this Uri uri, params string[] paths) => Append(uri, (IEnumerable<string>)paths);
 

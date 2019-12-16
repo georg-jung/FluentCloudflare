@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FluentCloudflare.Infrastructure.Extensions
 {
-    public static class HttpRequestMessageExtensions
+    internal static class HttpRequestMessageExtensions
     {
         public static async Task<Response<TResultEntity>> CallAsync<TResultEntity>(this HttpRequestMessage request, HttpClient client, CancellationToken cancellationToken = default)
         {

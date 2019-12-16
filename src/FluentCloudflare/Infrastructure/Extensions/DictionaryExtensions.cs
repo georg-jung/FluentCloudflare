@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FluentCloudflare.Infrastructure.Extensions
 {
-    public static class DictionaryExtensions
+    internal static class DictionaryExtensions
     {
         public static void SetValues<TKey, TValue>(this IDictionary<TKey, TValue> target, IReadOnlyDictionary<TKey, TValue> values)
         {
