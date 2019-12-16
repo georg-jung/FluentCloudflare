@@ -18,21 +18,10 @@ namespace FluentCloudflare.Builders
         {
         }
 
-        public async Task<Response<TokenStatus>> VerifyToken(HttpClient client, CancellationToken cancellationToken = default)
+        public IApiMethod<TokenStatus> VerifyToken()
         {
-            return await (new VerifyTokenBuilder(this)).CallAsync(client, cancellationToken).ConfigureAwait(false);
-        }
-
-        private class VerifyTokenBuilder : ApiMethodBase<TokenStatus>
-        {
-            private readonly IRequestBuilderFactory context;
-
-            public VerifyTokenBuilder(IRequestBuilderFactory context)
-            {
-                this.context = new UrlExtendingBuilder(context, "user", "tokens", "verify");
-            }
-
-            private protected override IRequestBuilder CreateRequestBuilder() => context.CreateRequestBuilder();
+            var builder = new UrlExtendingBuilder(this, "user", "tokens", "verify");
+            return ApiMethod<TokenStatus>.Create(builder, HttpMethod.Get);
         }
     }
 }

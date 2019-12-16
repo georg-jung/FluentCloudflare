@@ -1,4 +1,5 @@
-﻿using FluentCloudflare.Api;
+﻿using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -10,6 +11,6 @@ namespace FluentCloudflare.Abstractions.Builders
 {
     public interface ITokenAuthorizedSyntax : IAuthorizedSyntax
     {
-        Task<Response<TokenStatus>> VerifyToken(HttpClient client, CancellationToken cancellationToken = default);
+        IApiMethod<TokenStatus> VerifyToken();
     }
 }

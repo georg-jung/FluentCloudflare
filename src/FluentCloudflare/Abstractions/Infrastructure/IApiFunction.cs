@@ -10,6 +10,6 @@ namespace FluentCloudflare.Abstractions.Infrastructure
 {
     public interface IApiMethod<TEntity>
     {
-        Task<Response<TEntity>> CallAsync(HttpClient client, CancellationToken cancellationToken = default);
+        Task<Response<TEntity>> SendAsync(HttpClient client, CancellationToken cancellationToken = default);
     }
 }

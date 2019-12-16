@@ -17,7 +17,7 @@ namespace FluentCloudflare.Infrastructure
 
         private protected abstract IRequestBuilder CreateRequestBuilder();
 
-        public async Task<Response<TEntity>> CallAsync(HttpClient client, CancellationToken cancellationToken = default)
+        public async Task<Response<TEntity>> SendAsync(HttpClient client, CancellationToken cancellationToken = default)
         {
             if (client == null)
                 throw new ArgumentNullException(nameof(client));
