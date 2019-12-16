@@ -28,5 +28,11 @@ namespace Cloudflare.Builders.Dns
                 .CreateApiMethod<DnsRecord>(HttpMethod.Get);
 
         public IDnsListSyntax List() => new ListBuilder(this);
+
+        public IDnsUpdateSyntax Update(string identifier, DnsRecordType type, string name, string content)
+        {
+            var ctx = new UrlExtendingBuilder(this, identifier);
+            return new UpdateBuilder(ctx, type, name, content);
+        }
     }
 }

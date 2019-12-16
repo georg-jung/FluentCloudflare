@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Cloudflare.Builders
 {
-    public abstract class ListBuilderBase<TBuilder, TEntity> : ApiMethod<TEntity>,
-        IPaginatedSyntax<TBuilder>, IHasResultFilterStrategySyntax<TBuilder>
+    public abstract class ListBuilderBase<TBuilderSyntax, TEntity> : ApiMethod<TEntity>,
+        IPaginatedSyntax<TBuilderSyntax>, IHasResultFilterStrategySyntax<TBuilderSyntax>
     {
         abstract protected int MaximumEntriesPerPage { get; }
-        abstract protected TBuilder GetThis();
+        abstract protected TBuilderSyntax GetThis();
 
         internal ListBuilderBase(IRequestBuilderFactory context) : base(context)
         {
@@ -25,7 +25,7 @@ namespace Cloudflare.Builders
         }
 
         #region "Paging"
-        public TBuilder Page(int page)
+        public TBuilderSyntax Page(int page)
         {
             if (page < 1)
                 throw new ArgumentException($"The page must be bigger than 1.", nameof(page));
@@ -34,7 +34,7 @@ namespace Cloudflare.Builders
             return GetThis();
         }
 
-        public TBuilder PerPage(int maxEntries)
+        public TBuilderSyntax PerPage(int maxEntries)
         {
             if (maxEntries < 5 || maxEntries > MaximumEntriesPerPage)
                 throw new ArgumentException($"The number of entries per page must be between 5 and {MaximumEntriesPerPage}.", nameof(maxEntries));
@@ -43,7 +43,7 @@ namespace Cloudflare.Builders
             return GetThis();
         }
 
-        public TBuilder OrderBy(string field, OrderDirection direction = OrderDirection.Asc)
+        public TBuilderSyntax OrderBy(string field, OrderDirection direction = OrderDirection.Asc)
         {
             QueryStringParameters.order = field;
             QueryStringParameters.direction = direction.ToApiValue();
@@ -51,7 +51,7 @@ namespace Cloudflare.Builders
         }
         #endregion
 
-        public TBuilder Match(MatchType type)
+        public TBuilderSyntax Match(MatchType type)
         {
             QueryStringParameters.match = type.ToApiValue();
             return GetThis();
