@@ -2,6 +2,7 @@
 
 [![Build Status](https://dev.azure.com/georg-jung/FluentCloudflare/_apis/build/status/georg-jung.FluentCloudflare?branchName=master)](https://dev.azure.com/georg-jung/FluentCloudflare/_build/latest?definitionId=4&branchName=master)
 [![NuGet version (FluentCloudflare)](https://img.shields.io/nuget/v/FluentCloudflare.svg?style=flat)](https://www.nuget.org/packages/FluentCloudflare/)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=georg-jung/FluentCloudflare)](https://dependabot.com)
 
 
 This .Net Standard 2.0 library lets you consume the [Cloudflare REST API v4](https://api.cloudflare.com/) using a fluent syntax. It enables you to build requests and parse their results with ease. Bring your own `HttpClient`.
