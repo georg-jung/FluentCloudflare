@@ -53,7 +53,7 @@ Currently, the following APIs are supported:
 | [DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties) | :white_check_mark: except [import](https://api.cloudflare.com/#dns-records-for-a-zone-import-dns-records) |
 | [Cloudflare IPs](https://api.cloudflare.com/#cloudflare-ips-properties) | :white_check_mark: |
 | [Zone](https://api.cloudflare.com/#zone-properties) | [List](https://api.cloudflare.com/#zone-list-zones) only
-| [Accounts](https://api.cloudflare.com/#accounts-properties) | [List](https://api.cloudflare.com/#accounts-list-accounts) only
+| [Accounts](https://api.cloudflare.com/#accounts-properties) | [List](https://api.cloudflare.com/#accounts-list-accounts) and [get](https://api.cloudflare.com/#accounts-account-details)
 | [Origin CA](https://api.cloudflare.com/#origin-ca-properties) | [List](https://api.cloudflare.com/#origin-ca-list-certificates) and [get](https://api.cloudflare.com/#origin-ca-get-certificate)
 
 If you have a requirement for a specific area feel free to open an issue.

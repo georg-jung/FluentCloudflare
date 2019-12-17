@@ -1,5 +1,6 @@
 ﻿using FluentCloudflare.Abstractions.Builders.Accounts;
 using FluentCloudflare.Abstractions.Infrastructure;
+using FluentCloudflare.Api.Entities;
 using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace FluentCloudflare.Builders.Accounts
     {
         internal AccountsBuilder(IRequestBuilderFactory context) : base(context, "accounts")
         {
+        }
+
+        public IResponseApiMethod<Account> Get(string identifier)
+        {
+            return new ResponseApiMethodBuilder<Account>(new UrlExtender(this, identifier));
         }
 
         public IAccountsListSyntax List()
