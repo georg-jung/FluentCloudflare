@@ -15,7 +15,7 @@ namespace FluentCloudflare.Test
         public async Task TestGetIPs()
         {
             using var hc = new HttpClient();
-            var ips = await Cloudflare.IPs.Get().SendAsync(hc);
+            var ips = await Cloudflare.IPs.Get().ParseAsync(hc);
             var res = ips.Unpack();
             Assert.Contains(".0/", res.Ipv4Cidrs.First());
             Assert.Contains("::/", res.Ipv6Cidrs.First());

@@ -18,10 +18,10 @@ namespace FluentCloudflare.Builders
         {
         }
 
-        public IApiMethod<TokenStatus> VerifyToken()
+        public IResponseApiMethod<TokenStatus> VerifyToken()
         {
-            var builder = new UrlExtendingBuilder(this, "user", "tokens", "verify");
-            return ApiMethod<TokenStatus>.Create(builder, HttpMethod.Get);
+            var builder = new UrlExtender(this, "user", "tokens", "verify");
+            return ResponseApiMethodBuilder<TokenStatus>.Create(builder, HttpMethod.Get);
         }
     }
 }

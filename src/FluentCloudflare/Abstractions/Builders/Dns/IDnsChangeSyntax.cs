@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FluentCloudflare.Abstractions.Builders.Dns
 {
-    public interface IDnsChangeSyntax<TISyntax> : IApiMethod<DnsRecord>
+    public interface IDnsChangeSyntax<TISyntax> : IResponseApiMethod<DnsRecord>
     {
         /// <summary>
         /// Time to live for DNS record. Value of 1 is 'automatic'

@@ -8,7 +8,7 @@ namespace FluentCloudflare.Abstractions.Builders
     public interface IListRequestSyntax<TBuilder, TEntity> : 
         IPaginatedSyntax<TBuilder>,
         IHasResultFilterStrategySyntax<TBuilder>,
-        IApiMethod<TEntity>
+        IResponseApiMethod<TEntity>
     {
     }
 }

@@ -12,7 +12,7 @@ using System.Text;
 
 namespace FluentCloudflare.Builders.Dns
 {
-    internal abstract class ChangeBuilderBase<TBuilderSyntax> : ApiMethod<DnsRecord>
+    internal abstract class ChangeBuilderBase<TBuilderSyntax> : ResponseApiMethodBuilder<DnsRecord>
     {
         abstract protected TBuilderSyntax GetThis();
 

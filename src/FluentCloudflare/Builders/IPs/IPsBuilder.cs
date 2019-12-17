@@ -8,12 +8,12 @@ using System.Text;
 
 namespace FluentCloudflare.Builders.IPs
 {
-    internal class IPsBuilder : UrlExtendingBuilder, IIPsSyntax
+    internal class IPsBuilder : UrlExtender, IIPsSyntax
     {
         internal IPsBuilder(IRequestBuilderFactory context) : base(context, "ips")
         {
         }
 
-        public IApiMethod<Api.Entities.IPInformation> Get() => ApiMethod<Api.Entities.IPInformation>.Create(this, HttpMethod.Get);
+        public IResponseApiMethod<Api.Entities.IPInformation> Get() => ResponseApiMethodBuilder<Api.Entities.IPInformation>.Create(this, HttpMethod.Get);
     }
 }

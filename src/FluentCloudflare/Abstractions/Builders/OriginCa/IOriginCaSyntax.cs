@@ -9,7 +9,7 @@ namespace FluentCloudflare.Abstractions.Builders.OriginCaCertificates
 {
     public interface IOriginCaSyntax : IFluentSyntax
     {
-        IApiMethod<List<OriginCaCertificate>> List(string zoneId);
-        IApiMethod<OriginCaCertificate> Get(string certificateSerialNumber);
+        IResponseApiMethod<List<OriginCaCertificate>> List(string zoneId);
+        IResponseApiMethod<OriginCaCertificate> Get(string certificateSerialNumber);
     }
 }

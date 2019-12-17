@@ -8,6 +8,6 @@ namespace FluentCloudflare.Abstractions.Builders.IPs
 {
     public interface IIPsSyntax : IFluentSyntax
     {
-        IApiMethod<Api.Entities.IPInformation> Get();
+        IResponseApiMethod<Api.Entities.IPInformation> Get();
     }
 }

@@ -11,6 +11,6 @@ namespace FluentCloudflare.Abstractions.Builders
 {
     public interface ITokenAuthorizedSyntax : IAuthorizedSyntax
     {
-        IApiMethod<TokenStatus> VerifyToken();
+        IResponseApiMethod<TokenStatus> VerifyToken();
     }
 }

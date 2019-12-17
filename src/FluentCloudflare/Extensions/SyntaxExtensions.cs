@@ -13,7 +13,7 @@ namespace FluentCloudflare.Extensions
         public static IDnsUpdateSyntax Update(this IDnsSyntax syntax, DnsRecord record, DnsRecordType type, string name, string content)
             => syntax.Update(record.Id, type, name, content);
 
-        public static IApiMethod<EntryReference> Delete(this IDnsSyntax syntax, DnsRecord record)
+        public static IResponseApiMethod<EntryReference> Delete(this IDnsSyntax syntax, DnsRecord record)
             => syntax.Delete(record.Id);
     }
 }

@@ -10,7 +10,7 @@ using System.Text;
 
 namespace FluentCloudflare.Builders.OriginCaCertificates
 {
-    internal class OriginCaBuilder : UrlExtendingBuilder, IOriginCaSyntax, IRequestBuilderFactory
+    internal class OriginCaBuilder : UrlExtender, IOriginCaSyntax, IRequestBuilderFactory
     {
         private readonly string originCaKey;
 
@@ -20,15 +20,15 @@ namespace FluentCloudflare.Builders.OriginCaCertificates
         }
 
         // curl -X GET "https://api.cloudflare.com/client/v4/certificates/328578533902268680212849205732770752308931942346"
-        public IApiMethod<OriginCaCertificate> Get(string certificateSerialNumber)
-            => ApiMethod<OriginCaCertificate>.Create(new UrlExtendingBuilder(this, certificateSerialNumber), HttpMethod.Get);
+        public IResponseApiMethod<OriginCaCertificate> Get(string certificateSerialNumber)
+            => ResponseApiMethodBuilder<OriginCaCertificate>.Create(new UrlExtender(this, certificateSerialNumber), HttpMethod.Get);
 
         // curl -X GET "https://api.cloudflare.com/client/v4/certificates?zone_id=023e105f4ecef8ad9ca31a8372d0c353"
-        public IApiMethod<List<OriginCaCertificate>> List(string zoneId)
+        public IResponseApiMethod<List<OriginCaCertificate>> List(string zoneId)
         {
             dynamic prms = new ExpandoObject();
             prms.zone_id = zoneId;
-            var meth = ApiMethod<List<OriginCaCertificate>>.Create(this, HttpMethod.Get, prms);
+            var meth = ResponseApiMethodBuilder<List<OriginCaCertificate>>.Create(this, HttpMethod.Get, prms);
             return meth;
         }
 

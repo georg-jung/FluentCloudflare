@@ -24,8 +24,8 @@ namespace FluentCloudflare.Abstractions.Builders.Dns
         /// <param name="content">DNS record content</param>
         IDnsUpdateSyntax Update(string identifier, DnsRecordType type, string name, string content);
 
-        IApiMethod<EntryReference> Delete(string identifier);
+        IResponseApiMethod<EntryReference> Delete(string identifier);
 
-        IApiMethod<DnsRecord> Get(string identifier);
+        IResponseApiMethod<DnsRecord> Get(string identifier);
     }
 }
