@@ -6,6 +6,7 @@ using FluentCloudflare.Infrastructure;
 using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 
@@ -23,6 +24,9 @@ namespace FluentCloudflare.Builders.Dns
         public IResponseApiMethod<EntryReference> Delete(string identifier)
             => new UrlExtender(this, identifier)
                 .CreateApiMethod<EntryReference>(HttpMethod.Delete);
+
+        public IApiMethod<Stream> Export()
+            => new StreamApiMethod(new UrlExtender(this, "export"));
 
         public IResponseApiMethod<DnsRecord> Get(string identifier)
             => new UrlExtender(this, identifier)

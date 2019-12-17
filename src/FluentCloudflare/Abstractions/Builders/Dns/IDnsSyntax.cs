@@ -27,5 +27,7 @@ namespace FluentCloudflare.Abstractions.Builders.Dns
         IResponseApiMethod<EntryReference> Delete(string identifier);
 
         IResponseApiMethod<DnsRecord> Get(string identifier);
+
+        IApiMethod<System.IO.Stream> Export();
     }
 }
