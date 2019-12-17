@@ -21,11 +21,13 @@ namespace FluentCloudflare.Builders
             this.urlExtensions = urlExtensions;
         }
 
-        IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()
+        private protected IRequestBuilder CreateRequestBuilder()
         {
             var builder = context.CreateRequestBuilder();
             builder.UrlSegments.AddRange(urlExtensions);
             return builder;
         }
+
+        IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder() => CreateRequestBuilder();
     }
 }
