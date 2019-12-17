@@ -13,8 +13,11 @@ using System.Threading.Tasks;
 
 namespace FluentCloudflare.Builders
 {
-    internal abstract class ListBuilderBase<TBuilderSyntax, TEntity> : ResponseApiMethodBuilder<TEntity>,
-        IPaginatedSyntax<TBuilderSyntax>, IHasResultFilterStrategySyntax<TBuilderSyntax>
+    internal abstract class ListBuilderBase<TBuilderSyntax, TEntity> : 
+        ResponseApiMethodBuilder<List<TEntity>>,
+        IPaginatedSyntax<TBuilderSyntax>,
+        IOrderedSyntax<TBuilderSyntax>,
+        IHasResultFilterStrategySyntax<TBuilderSyntax>
     {
         public int MaximumEntriesPerPage { get; }
         abstract protected TBuilderSyntax GetThis();

@@ -11,7 +11,7 @@ using FluentCloudflare.Abstractions.Infrastructure;
 
 namespace FluentCloudflare.Builders.Dns
 {
-    internal class ListBuilder : ListBuilderBase<IDnsListSyntax, List<DnsRecord>>, IDnsListSyntax
+    internal class ListBuilder : ListBuilderBase<IDnsListSyntax, DnsRecord>, IDnsListSyntax
     {
         protected override IDnsListSyntax GetThis() => this;
 

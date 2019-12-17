@@ -17,9 +17,5 @@ namespace FluentCloudflare.Abstractions.Builders
         /// Number of entries per page
         /// </summary>
         TBuilder PerPage(int maxEntries);
-
-        /// <param name="field">Field to order records by</param>
-        /// <param name="direction">Direction to order</param>
-        TBuilder OrderBy(string field, OrderDirection direction = OrderDirection.Asc);
     }
 }

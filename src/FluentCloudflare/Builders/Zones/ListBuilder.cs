@@ -12,7 +12,7 @@ using System.Text;
 
 namespace FluentCloudflare.Builders.Zones
 {
-    internal class ListBuilder : ListBuilderBase<IZonesListSyntax, List<Zone>>, IZonesListSyntax
+    internal class ListBuilder : ListBuilderBase<IZonesListSyntax, Zone>, IZonesListSyntax
     {
         protected override IZonesListSyntax GetThis() => this;
 
