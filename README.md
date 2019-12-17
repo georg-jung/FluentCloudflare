@@ -50,9 +50,10 @@ Currently, the following APIs are supported:
 | Area          | Supported     | Comments |
 | ------------- | ------------- | -------- |
 | [Authorization](https://api.cloudflare.com/#getting-started-requests) | :white_check_mark: | Both tokens and keys are supported |
-| [DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties) | :white_check_mark: except [import](https://api.cloudflare.com/#dns-records-for-a-zone-import-dns-records) [export](https://api.cloudflare.com/#dns-records-for-a-zone-export-dns-records) and [error codes](https://api.cloudflare.com/#dns-records-for-a-zone-export-dns-records) |
+| [DNS Records](https://api.cloudflare.com/#dns-records-for-a-zone-properties) | :white_check_mark: except [import](https://api.cloudflare.com/#dns-records-for-a-zone-import-dns-records), [export](https://api.cloudflare.com/#dns-records-for-a-zone-export-dns-records) and [error codes](https://api.cloudflare.com/#dns-records-for-a-zone-export-dns-records) |
 | [Cloudflare IPs](https://api.cloudflare.com/#cloudflare-ips-properties) | :white_check_mark: |
 | [Zone](https://api.cloudflare.com/#zone-properties) | [List](https://api.cloudflare.com/#zone-list-zones) only
+| [Origin CA](https://api.cloudflare.com/#origin-ca-properties) | [List](https://api.cloudflare.com/#origin-ca-list-certificates) and [get](https://api.cloudflare.com/#origin-ca-get-certificate)
 
 If you have a requirement for a specific area feel free to open an issue.
 
