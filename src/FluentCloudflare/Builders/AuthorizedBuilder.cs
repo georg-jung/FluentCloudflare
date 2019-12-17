@@ -1,4 +1,5 @@
 ﻿using FluentCloudflare.Abstractions.Builders;
+using FluentCloudflare.Abstractions.Builders.Accounts;
 using FluentCloudflare.Abstractions.Builders.Zones;
 using FluentCloudflare.Abstractions.Infrastructure;
 using FluentCloudflare.Api;
@@ -54,5 +55,7 @@ namespace FluentCloudflare.Builders
         public IZoneSyntax Zone(string identifier) => new ZoneBuilder(this, identifier);
 
         public IZonesSyntax Zones => new Zones.ZonesBuilder(this);
+
+        public IAccountsSyntax Accounts => new Accounts.AccountsBuilder(this);
     }
 }

@@ -8,5 +8,7 @@ namespace FluentCloudflare.Api.Entities
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public AccountSettings Settings { get; set; }
     }
 }
