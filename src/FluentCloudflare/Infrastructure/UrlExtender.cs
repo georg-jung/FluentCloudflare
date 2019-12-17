@@ -3,19 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FluentCloudflare.Builders
+namespace FluentCloudflare.Infrastructure
 {
-    internal class UrlExtendingBuilder : IRequestBuilderFactory
+    internal class UrlExtender : IRequestBuilderFactory
     {
         private readonly IRequestBuilderFactory context;
         private readonly IEnumerable<string> urlExtensions;
 
-        internal UrlExtendingBuilder(IRequestBuilderFactory context, params string[] urlExtensions)
+        internal UrlExtender(IRequestBuilderFactory context, params string[] urlExtensions)
             : this(context, (IEnumerable<string>)urlExtensions)
         {
         }
 
-        internal UrlExtendingBuilder(IRequestBuilderFactory context, IEnumerable<string> urlExtensions)
+        internal UrlExtender(IRequestBuilderFactory context, IEnumerable<string> urlExtensions)
         {
             this.context = context;
             this.urlExtensions = urlExtensions;
