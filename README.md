@@ -27,10 +27,10 @@ var zone = zones.First();
 var zoneCtx = context.Zone(zone.Id);
 var dns = zoneCtx.Dns;
 
-// Notice the call to SendAsync instead of CallAsync. This way we dont get the
+// Notice the call to ParseAsync instead of CallAsync. This way we dont get the
 // result contained in the response but the whole response.
-// Actually, CallAsync is an extension method in FluentCloudflare.Extensions which uses SendAsync internally.
-var recordsResponse = await dns.List().PerPage(100).SendAsync(hc);
+// Actually, CallAsync is an extension method in FluentCloudflare.Extensions which uses ParseAsync internally.
+var recordsResponse = await dns.List().PerPage(100).ParseAsync(hc);
 if (recordsResponse.ResultInfo.TotalCount > 100)
     Console.WriteLine("We got more than 100 DNS records! We may want to get more of them using paging...");
 
