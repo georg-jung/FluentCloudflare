@@ -20,7 +20,9 @@ namespace FluentCloudflare.Infrastructure
         public HttpRequestMessage Build()
         {
             var uri = BaseUrl.Append(UrlSegments);
-            uri = uri.Append($"?{QueryStringParameters.ToQueryString()}");
+            var getParams = QueryStringParameters.ToQueryString();
+            if (!string.IsNullOrEmpty(getParams))
+                uri = uri.Append($"?{getParams}");
             var req = new HttpRequestMessage(Method, uri);
             foreach ((var header, var value) in Headers)
             {
