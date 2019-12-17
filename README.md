@@ -4,7 +4,7 @@
 [![NuGet version (FluentCloudflare)](https://img.shields.io/nuget/v/FluentCloudflare.svg?style=flat)](https://www.nuget.org/packages/FluentCloudflare/)
 
 
-This .Net Standard 2.0 library makes it easy to consume the [Cloudflare REST API v4](https://api.cloudflare.com/) using a fluent syntax. It helps you with building the requests and parsing the results with ease. Bring your own `HttpClient`.
+This .Net Standard 2.0 library lets you consume the [Cloudflare REST API v4](https://api.cloudflare.com/) using a fluent syntax. It enables you to build requests and parse their results with ease. Bring your own `HttpClient`.
 
 Please note this is currently in active development and the API is likely to change.
 
