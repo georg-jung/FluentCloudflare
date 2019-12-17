@@ -10,7 +10,13 @@ namespace FluentCloudflare.Api.Entities
         public string Name { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
-        public DateTime ActivatedOn { get; set; }
+        public DateTime? ActivatedOn { get; set; }
         public Account Account { get; set; }
+        public string OriginalRegistrar { get; set; }
+        public string OriginalDnshost { get; set; }
+        public bool Paused { get; set; }
+        public List<string> NameServers { get; set; }
+        public List<string> OriginalNameServers { get; set; }
+        public int DevelopmentMode { get; set; }
     }
 }
