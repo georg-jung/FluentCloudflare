@@ -9,10 +9,10 @@ namespace FluentCloudflare.Infrastructure.Extensions
 {
     internal static class IRequestBuilderFactoryExtensions
     {
-        public static ApiMethod<TEntity> CreateApiMethod<TEntity>(
+        public static ResponseApiMethodBuilder<TEntity> CreateApiMethod<TEntity>(
             this IRequestBuilderFactory factory,
             HttpMethod method,
             ExpandoObject queryStringParameters = null)
-        => ApiMethod<TEntity>.Create(factory, method, queryStringParameters);
+        => ResponseApiMethodBuilder<TEntity>.Create(factory, method, queryStringParameters);
     }
 }

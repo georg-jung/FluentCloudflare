@@ -20,14 +20,14 @@ namespace FluentCloudflare.Extensions
         /// <returns>The result contained in the response if the response indicates success, throws otherwise.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="method"/> or <paramref name="client"/> are null.</exception>
         /// <exception cref="CloudflareException">If the response did not indicate success, the StatusCode was not 200 OK or response contained no result.</exception>
-        public static async Task<TEntity> CallAsync<TEntity>(this IApiMethod<TEntity> method, HttpClient client, CancellationToken cancellationToken = default)
+        public static async Task<TEntity> CallAsync<TEntity>(this IResponseApiMethod<TEntity> method, HttpClient client, CancellationToken cancellationToken = default)
         {
             if (method == null)
                 throw new ArgumentNullException(nameof(method));
             if (client == null)
                 throw new ArgumentNullException(nameof(client));
 
-            return (await method.SendAsync(client, cancellationToken).ConfigureAwait(false)).Unpack();
+            return (await method.ParseAsync(client, cancellationToken).ConfigureAwait(false)).Unpack();
         }
     }
 }

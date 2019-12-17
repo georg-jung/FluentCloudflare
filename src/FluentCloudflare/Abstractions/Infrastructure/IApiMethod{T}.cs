@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace FluentCloudflare.Abstractions.Infrastructure
 {
-    public interface IApiMethod
+    public interface IApiMethod<TPayload> : IApiMethod
     {
-        Task<HttpResponseMessage> SendAsync(HttpClient client, CancellationToken cancellationToken = default);
+        Task<TPayload> ParseAsync(HttpClient client, CancellationToken cancellationToken = default);
     }
 }

@@ -1,6 +1,4 @@
 ﻿using FluentCloudflare.Abstractions.Infrastructure;
-using FluentCloudflare.Api;
-using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -10,26 +8,25 @@ using System.Threading.Tasks;
 
 namespace FluentCloudflare.Infrastructure
 {
-    internal abstract class ApiMethodBase<TEntity> : IRequestBuilderFactory, IApiMethod<TEntity>
+    internal abstract class ApiMethodBase : IApiMethod
     {
-        IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()
-            => CreateRequestBuilder();
+        protected abstract IRequestBuilder CreateRequestBuilder();
 
-        private protected abstract IRequestBuilder CreateRequestBuilder();
-
-        public async Task<Response<TEntity>> SendAsync(HttpClient client, CancellationToken cancellationToken = default)
+        public static async Task<HttpResponseMessage> SendAsync(IRequestBuilder requestBuilder, HttpClient client, CancellationToken cancellationToken = default)
         {
+            if (requestBuilder == null)
+                throw new ArgumentNullException(nameof(requestBuilder));
             if (client == null)
                 throw new ArgumentNullException(nameof(client));
-            
-            var builder = CreateRequestBuilder();
-            using var req = builder.Build();
-            using var res = await client.SendAsync(req, cancellationToken).ConfigureAwait(false);
 
-            using var stream = await res.Content.ReadAsStreamAsync().ConfigureAwait(false);
-            var resp = stream.DeserializeJson<Response<TEntity>>();
-            resp.StatusCode = res.StatusCode;
-            return resp;
+            using var req = requestBuilder.Build();
+            return await client.SendAsync(req, cancellationToken).ConfigureAwait(false);
+        }
+
+        public Task<HttpResponseMessage> SendAsync(HttpClient client, CancellationToken cancellationToken = default)
+        {
+            var builder = CreateRequestBuilder();
+            return SendAsync(builder, client, cancellationToken);
         }
     }
 }
