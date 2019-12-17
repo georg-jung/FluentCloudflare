@@ -13,11 +13,9 @@ namespace FluentCloudflare.Builders.Dns
 {
     internal class ListBuilder : ListBuilderBase<IDnsListSyntax, List<DnsRecord>>, IDnsListSyntax
     {
-        protected override int MaximumEntriesPerPage => 100;
-
         protected override IDnsListSyntax GetThis() => this;
 
-        internal ListBuilder(IRequestBuilderFactory context) : base(context)
+        internal ListBuilder(IRequestBuilderFactory context) : base(context, 100)
         {
         }
 

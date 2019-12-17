@@ -16,12 +16,13 @@ namespace FluentCloudflare.Builders
     internal abstract class ListBuilderBase<TBuilderSyntax, TEntity> : ResponseApiMethodBuilder<TEntity>,
         IPaginatedSyntax<TBuilderSyntax>, IHasResultFilterStrategySyntax<TBuilderSyntax>
     {
-        abstract protected int MaximumEntriesPerPage { get; }
+        public int MaximumEntriesPerPage { get; }
         abstract protected TBuilderSyntax GetThis();
 
-        internal ListBuilderBase(IRequestBuilderFactory context) : base(context)
+        internal ListBuilderBase(IRequestBuilderFactory context, int maximumEntriesPerPage) : base(context)
         {
             Method = HttpMethod.Get;
+            MaximumEntriesPerPage = maximumEntriesPerPage;
         }
 
         #region "Paging"

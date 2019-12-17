@@ -14,11 +14,9 @@ namespace FluentCloudflare.Builders.Zones
 {
     internal class ListBuilder : ListBuilderBase<IZonesListSyntax, List<Zone>>, IZonesListSyntax
     {
-        protected override int MaximumEntriesPerPage => 50;
-
         protected override IZonesListSyntax GetThis() => this;
 
-        internal ListBuilder(IRequestBuilderFactory context) : base(context)
+        internal ListBuilder(IRequestBuilderFactory context) : base(context, 50)
         {
         }
 
