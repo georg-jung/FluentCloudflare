@@ -41,7 +41,7 @@ namespace FluentCloudflare.Infrastructure
         protected override IRequestBuilder CreateRequestBuilder()
         {
             var builder = Context.CreateRequestBuilder();
-            builder.Method = Method;
+            builder.Method = Method ?? HttpMethod.Get;
             builder.QueryStringParameters.SetValues((ExpandoObject)QueryStringParameters);
             builder.Body.SetValues((ExpandoObject)Body);
             builder.Headers.SetValues(Headers);
