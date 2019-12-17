@@ -1,8 +1,10 @@
 ﻿using FluentCloudflare.Abstractions.Builders;
 using FluentCloudflare.Abstractions.Builders.IPs;
+using FluentCloudflare.Abstractions.Builders.OriginCaCertificates;
 using FluentCloudflare.Abstractions.Infrastructure;
 using FluentCloudflare.Builders;
 using FluentCloudflare.Builders.IPs;
+using FluentCloudflare.Builders.OriginCaCertificates;
 using FluentCloudflare.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -17,15 +19,19 @@ namespace FluentCloudflare
 
         public static ITokenAuthorizedSyntax WithToken(string token)
         {
-            return new TokenAuthorizedBuilder(new EndpointFactory(), token);
+            return new TokenAuthorizedBuilder(CreateContext(), token);
         }
 
         public static IAuthorizedSyntax WithKey(string apiKey, string email)
         {
-            return new AuthorizedBuilder(new EndpointFactory(), apiKey, email);
+            return new AuthorizedBuilder(CreateContext(), apiKey, email);
         }
 
-        public static IIPsSyntax IPs => new IPsBuilder(new EndpointFactory());
+        public static IIPsSyntax IPs => new IPsBuilder(CreateContext());
+
+        public static IOriginCaSyntax OriginCa(string originCaKey) => new OriginCaBuilder(CreateContext(), originCaKey);
+
+        private static IRequestBuilderFactory CreateContext() => new EndpointFactory();
 
         private class EndpointFactory : IRequestBuilderFactory
         {
