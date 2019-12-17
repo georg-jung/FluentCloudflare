@@ -9,5 +9,6 @@ namespace FluentCloudflare.Abstractions.Builders.Zones
     public interface IZonesSyntax : IFluentSyntax
     {
         IZonesListSyntax List();
+        IZonesCreateSyntax Create(string domainName, string accountId);
     }
 }

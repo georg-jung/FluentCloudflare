@@ -13,6 +13,9 @@ namespace FluentCloudflare.Builders.Zones
         {
         }
 
+        public IZonesCreateSyntax Create(string domainName, string accountId)
+            => new CreateBuilder(this, domainName, accountId);
+
         public IZonesListSyntax List() => new ListBuilder(this);
     }
 }
