@@ -1,3 +1,13 @@
+<p align="center">
+  <a href="https://www.nuget.org/packages/FluentCloudflare/">
+    <img
+      alt="FluentCloudflare"
+      src="logo.svg"
+      width="100"
+    />
+  </a>
+</p>
+
 # FluentCloudflare
 
 [![Build Status](https://dev.azure.com/georg-jung/FluentCloudflare/_apis/build/status/georg-jung.FluentCloudflare?branchName=master)](https://dev.azure.com/georg-jung/FluentCloudflare/_build/latest?definitionId=4&branchName=master)
