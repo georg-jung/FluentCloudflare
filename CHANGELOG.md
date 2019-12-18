@@ -1,8 +1,15 @@
 # Changelog
 
+## v0.1.7
+
+* **New**: Support for [SourceLink](https://github.com/dotnet/sourcelink)
+* **Fix**: Replace deprecated `PackageIconUrl` with `PackageIcon`
+
+
 ## v0.1.6
 
 Logo added to package.
+
 
 ## v0.1.5
 
@@ -25,11 +32,11 @@ Logo added to package.
   * `IResponseApiMethod<TEntity>` additionally supports `ParseAsync`
 * `IOrderedSyntax` now is an interface on it's own and is not integrated into `IPaginatedSyntax` anymore. Cloudflare's API has endpoints whjich support paging but dont support ordering by a field.
 
-
 ### New Features
 
 * Accounts: Get and List
 * Zone: Create
+
 
 ## v0.1.3
 
