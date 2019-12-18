@@ -10,14 +10,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <RepositoryUrl>https://github.com/georg-jung/FluentCloudflare.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/georg-jung/FluentCloudflare</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageDescription>A fluent .Net Standard 2.0 wrapper for the Cloudflare API v4.</PackageDescription>
     <PackageTags>cloudflare;api;fluent;cloud;rest;client;http;json</PackageTags>
-    <PackageIcon>logo-nuget.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -34,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\doc\logo-nuget.png" Pack="true" PackagePath="\" />
+    <None Include="../../doc/logo-nuget.png" Pack="true" PackagePath="/icon.png" />
   </ItemGroup>
 
 </Project>
