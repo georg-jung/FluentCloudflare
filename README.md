@@ -7,7 +7,7 @@
 
 This .Net Standard 2.0 library lets you consume the [Cloudflare REST API v4](https://api.cloudflare.com/) using a fluent syntax. It enables you to build requests and parse their results with ease. Bring your own `HttpClient`.
 
-Please note this is currently in active development and the API is likely to change.
+Please note this is currently in active development and the API is likely to change. For recent changes and updating instructions see the [Changelog](CHANGELOG.md).
 
 ## Getting Started
 
@@ -15,6 +15,9 @@ Please note this is currently in active development and the API is likely to cha
   * `PM> Install-Package FluentCloudflare`
 
 ```c#
+using FluentCloudflare;
+using FluentCloudflare.Extensions;
+
 using var hc = new HttpClient();
 var context = Cloudflare.WithToken(YourApiToken); // or .WithKey(ApiKey, "you@example.com");
 
