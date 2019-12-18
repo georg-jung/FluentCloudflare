@@ -5,26 +5,28 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  BuildConfiguration: 'Release'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    arguments: 'src/FluentCloudflare.sln --configuration Release'
+    publishTestResults: true
+    arguments: 'src/FluentCloudflare.sln -c $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: false
-    arguments: 'src/FluentCloudflare.sln -c Release --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-publish'
+    arguments: 'src/FluentCloudflare.sln -c $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-publish'
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'pack'
-    arguments: 'src/FluentCloudflare.sln -c Release --output $(Build.ArtifactStagingDirectory)/FluentCloudflare-nupkg'
+    command: pack
+    packagesToPack: src/FluentCloudflare/FluentCloudflare.csproj
+    configuration: $(BuildConfiguration)
+    packDirectory: $(Build.ArtifactStagingDirectory)/Packages
 
 - task: PublishPipelineArtifact@1
   inputs:
