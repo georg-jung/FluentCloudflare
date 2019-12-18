@@ -16,7 +16,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageDescription>A fluent .Net Standard 2.0 wrapper for the Cloudflare API v4.</PackageDescription>
-    <PackageTags>fluent;cloudflare;cloud;rest;client;http;json</PackageTags>
+    <PackageTags>cloudflare;api;fluent;cloud;rest;client;http;json</PackageTags>
     <PackageIconUrl>https://github.com/georg-jung/FluentCloudflare/blob/master/doc/logo-nuget.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
