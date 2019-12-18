@@ -2,7 +2,7 @@
   <a href="https://www.nuget.org/packages/FluentCloudflare/">
     <img
       alt="FluentCloudflare"
-      src="logo.svg"
+      src="doc/logo.svg"
       width="100"
     />
   </a>
