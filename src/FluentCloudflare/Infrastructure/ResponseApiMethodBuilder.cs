@@ -26,10 +26,10 @@ namespace FluentCloudflare.Infrastructure
             return await ResponseApiMethod<TEntity>.ParseAsync(res).ConfigureAwait(false);
         }
 
-        internal static ResponseApiMethodBuilder<TEntity> Create(IRequestBuilderFactory context, ExpandoObject queryStringParameters = null, ExpandoObject body = null)
+        internal static new ResponseApiMethodBuilder<TEntity> Create(IRequestBuilderFactory context, ExpandoObject queryStringParameters = null, ExpandoObject body = null)
             => Create(context, HttpMethod.Get, queryStringParameters, body);
 
-        internal static ResponseApiMethodBuilder<TEntity> Create(
+        internal static new ResponseApiMethodBuilder<TEntity> Create(
             IRequestBuilderFactory context,
             HttpMethod method,
             ExpandoObject queryStringParameters = null,
