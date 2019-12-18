@@ -17,7 +17,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageDescription>A fluent .Net Standard 2.0 wrapper for the Cloudflare API v4.</PackageDescription>
     <PackageTags>cloudflare;api;fluent;cloud;rest;client;http;json</PackageTags>
-    <PackageIconUrl>https://github.com/georg-jung/FluentCloudflare/blob/master/doc/logo-nuget.png?raw=true</PackageIconUrl>
+    <PackageIcon>logo-nuget.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +27,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\doc\logo-nuget.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
