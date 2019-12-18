@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.6
+
+Logo added to package.
+
 ## v0.1.5
 
 ### Updating
