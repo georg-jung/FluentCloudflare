@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud" viewBox="0 0 24 24">
+  <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29" stroke="#f48120"/>
+  <g stroke="#244ba3">
+    <path d="M13.659 15.613h1.659a2.765 2.765 0 012.765 2.764 2.765 2.765 0 01-2.765 2.765h-1.659m-3.318 0H8.682a2.765 2.765 0 01-2.765-2.765 2.765 2.765 0 012.765-2.764h1.659M9.788 18.377h4.424" stroke-width="1.10598"/>
+  </g>
+</svg>
