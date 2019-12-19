@@ -20,17 +20,16 @@ Logo added to package.
 
 ### Breaking Changes
 
-* The three methods-to-use for making API Calls are now `SendAsync`, `ParseAsync` and, most importantly, `CallAsync` (via Extension). `ParseAsync` is now, what `SendAsync` was before. Sorry for the unconvenience.
+* The three methods-to-use for making API Calls are now `SendAsync`, `ParseAsync` and, most importantly, `CallAsync` (via Extension). `ParseAsync` is now, what `SendAsync` was before. Sorry for the inconvenience.
   * `SendAsync` is the most raw option and returns the plain `HttpResponseMessage` for further custom processing.
   * `ParseAsync` parses the response message as before, in the most commen case as a `Response<TEntity>`. `ParseAsync` is built on top of `SendAsync`.
   * `CallAsync` is built on top of `ParseAsync`. It just returns the result inside `Response<TEntity>.Result` and throws if the response does not indicate success. Possibly this is the method you want to call in most cases. Be sure add `using FluentCloudflare.Extensions;`.
   * This new architecture allows for more flexibility, which is needed i.e. for `Dns.Export`. Until now just API methods which returned a standard json response were supported. This is now modular.
 * What formely was `IApiMethod<TEntity>` now is `IResponseApiMethod<TEntity>`, indicating it is an API method that has a standard json-response type of answer format. The new `IApiMethod` and `IApiMethod<T>` are more general. This would even allow using the same architecture for other non-Cloudflare APIs
   * `IApiMethod` supports `SendAsync`
-  * `IApiMethod<TPayload>` additionally 
-  supports `ParseAsync`
-  * `IResponseApiMethod<TEntity>` additionally supports `ParseAsync`
-* `IOrderedSyntax` now is an interface on it's own and is not integrated into `IPaginatedSyntax` anymore. Cloudflare's API has endpoints whjich support paging but dont support ordering by a field.
+  * `IApiMethod<TPayload>` additionally supports `ParseAsync`
+  * `IResponseApiMethod<TEntity>` additionally supports `CallAsync`
+* `IOrderedSyntax` now is an interface on it's own and is not integrated into `IPaginatedSyntax` anymore. Cloudflare's API has endpoints which support paging but don't support ordering by a field.
 
 ### New Features
 
