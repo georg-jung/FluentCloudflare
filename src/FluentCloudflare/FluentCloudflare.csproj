@@ -6,7 +6,8 @@
     <RootNamespace>FluentCloudflare</RootNamespace>
     <PackageId>FluentCloudflare</PackageId>
     <Authors>Georg Jung</Authors>
-    <Version>0.1.7</Version>
+    <VersionPrefix>0.1.8</VersionPrefix>
+    <Deterministic>True</Deterministic>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -28,8 +29,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
   <ItemGroup>
