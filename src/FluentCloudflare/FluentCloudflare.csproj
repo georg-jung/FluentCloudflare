@@ -6,7 +6,7 @@
     <RootNamespace>FluentCloudflare</RootNamespace>
     <PackageId>FluentCloudflare</PackageId>
     <Authors>Georg Jung</Authors>
-    <VersionPrefix>0.2.0</VersionPrefix>
+    <VersionPrefix>0.2.1</VersionPrefix>
     <Deterministic>True</Deterministic>
   </PropertyGroup>
 
