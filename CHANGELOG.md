@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1
+
+* This now targets JSON.Net 11.0.1 and Microsoft.CSharp 4.0.1 to achieve broader compatibility
+  * When consuming this library you can of course update to the newest versions of the dependencies. Newer versions are not *required* though, which is why I target lower versions. [MSDN on Dependencies](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/dependencies)
+* **Fix**: When sending GET-requests, empty bodies and bodies like "{}" are not sent anymore - they are pointless. This fixes using these methods on the "full" .Net Framework. See https://github.com/dotnet/corefx/issues/28135
+
+
 ## v0.1.7
 
 * **New**: Support for [SourceLink](https://github.com/dotnet/sourcelink)
