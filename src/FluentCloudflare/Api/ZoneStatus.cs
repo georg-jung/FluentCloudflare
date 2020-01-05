@@ -13,6 +13,6 @@ namespace FluentCloudflare.Api
     internal static class ZoneStatusExtensions
     {
         public static string ToApiValue(this ZoneStatus value)
-            => value.ToName();
+            => value.ToLowerName();
     }
 }

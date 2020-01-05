@@ -37,6 +37,7 @@ namespace FluentCloudflare.Infrastructure
         /// </summary>
         /// <returns>The objects type</returns>
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1716:Bezeichner dürfen nicht mit Schlüsselwörtern übereinstimmen", Justification = "That this member name matches the gettype keyword obviously can not be changed.")]
         Type GetType();
 
         /// <summary>
