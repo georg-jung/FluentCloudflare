@@ -29,7 +29,8 @@ namespace FluentCloudflare.Infrastructure
                 req.Headers.Add(header, value);
             }
             var jsonBody = Body.ToJson();
-            req.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+            if (!string.IsNullOrEmpty(jsonBody))
+                req.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
             return req;
         }
     }
