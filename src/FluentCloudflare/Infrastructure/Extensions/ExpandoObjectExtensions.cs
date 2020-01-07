@@ -30,7 +30,7 @@ namespace FluentCloudflare.Infrastructure.Extensions
                 }
             };
 
-            return JsonConvert.SerializeObject(dyn);
+            return JsonConvert.SerializeObject(dyn, settings);
         }
 
         public static string ToQueryString(this ExpandoObject value)
