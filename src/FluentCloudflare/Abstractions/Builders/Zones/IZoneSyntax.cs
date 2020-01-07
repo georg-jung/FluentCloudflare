@@ -9,5 +9,6 @@ namespace FluentCloudflare.Abstractions.Builders.Zones
     public interface IZoneSyntax : IFluentSyntax
     {
         IDnsSyntax Dns { get; }
+        IPurgeCacheSyntax PurgeCache { get; }
     }
 }

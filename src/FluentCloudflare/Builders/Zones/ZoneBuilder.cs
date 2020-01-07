@@ -16,5 +16,7 @@ namespace FluentCloudflare.Builders.Zones
         }
 
         public IDnsSyntax Dns => new Dns.DnsBuilder(this);
+
+        public IPurgeCacheSyntax PurgeCache => new PurgeCacheBuilder(this);
     }
 }
