@@ -2,6 +2,7 @@
 using FluentCloudflare.Abstractions.Infrastructure;
 using FluentCloudflare.Api.Entities;
 using FluentCloudflare.Infrastructure;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -21,15 +22,14 @@ namespace FluentCloudflare.Builders.OriginCaCertificates
 
         // curl -X GET "https://api.cloudflare.com/client/v4/certificates/328578533902268680212849205732770752308931942346"
         public IResponseApiMethod<OriginCaCertificate> Get(string certificateSerialNumber)
-            => ResponseApiMethodBuilder<OriginCaCertificate>.Create(new UrlExtender(this, certificateSerialNumber), HttpMethod.Get);
+            => ResponseApiMethodBuilder<OriginCaCertificate>.Create(new UrlExtender(this, certificateSerialNumber));
 
         // curl -X GET "https://api.cloudflare.com/client/v4/certificates?zone_id=023e105f4ecef8ad9ca31a8372d0c353"
         public IResponseApiMethod<List<OriginCaCertificate>> List(string zoneId)
         {
             dynamic prms = new ExpandoObject();
             prms.zone_id = zoneId;
-            var meth = ResponseApiMethodBuilder<List<OriginCaCertificate>>.Create(this, HttpMethod.Get, prms);
-            return meth;
+            return this.CreateApiMethod<List<OriginCaCertificate>>(queryStringParameters: (ExpandoObject)prms);
         }
 
         IRequestBuilder IRequestBuilderFactory.CreateRequestBuilder()

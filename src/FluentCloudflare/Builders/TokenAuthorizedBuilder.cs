@@ -21,7 +21,7 @@ namespace FluentCloudflare.Builders
         public IResponseApiMethod<TokenStatus> VerifyToken()
         {
             var builder = new UrlExtender(this, "user", "tokens", "verify");
-            return ResponseApiMethodBuilder<TokenStatus>.Create(builder, HttpMethod.Get);
+            return builder.CreateApiMethod<TokenStatus>();
         }
     }
 }

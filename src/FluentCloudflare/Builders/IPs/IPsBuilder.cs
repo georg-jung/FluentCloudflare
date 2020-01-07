@@ -1,6 +1,7 @@
 ﻿using FluentCloudflare.Abstractions.Builders.IPs;
 using FluentCloudflare.Abstractions.Infrastructure;
 using FluentCloudflare.Infrastructure;
+using FluentCloudflare.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -14,6 +15,6 @@ namespace FluentCloudflare.Builders.IPs
         {
         }
 
-        public IResponseApiMethod<Api.Entities.IPInformation> Get() => ResponseApiMethodBuilder<Api.Entities.IPInformation>.Create(this, HttpMethod.Get);
+        public IResponseApiMethod<Api.Entities.IPInformation> Get() => this.CreateApiMethod<Api.Entities.IPInformation>();
     }
 }
