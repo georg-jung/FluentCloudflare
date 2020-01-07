@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.0
+
+* **New**: Proper handling of errors returned as part of responses of the Cloudflare API. This includes a new `ResponseHasErrorsException` type (inheriting `CloudflareException`), which will be thrown if the response's errors field is not null or empty on `CallAsync` or `EnsureSuccess`. This exception type provides an `Errors` property.
+
+
 ## v0.2.1
 
 * This now targets JSON.Net 11.0.1 and Microsoft.CSharp 4.0.1 to achieve broader compatibility
