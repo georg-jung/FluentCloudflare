@@ -14,13 +14,13 @@ namespace FluentCloudflare.Infrastructure.Extensions
             HttpMethod method,
             ExpandoObject queryStringParameters = null,
             ExpandoObject body = null)
-        => ResponseApiMethodBuilder<TEntity>.Create(factory, method, queryStringParameters, body);
-        
+            => ResponseApiMethodBuilder<TEntity>.Create(factory, method, queryStringParameters, body);
+
         public static ResponseApiMethodBuilder<TEntity> CreateApiMethod<TEntity>(
             this IRequestBuilderFactory factory,
             ExpandoObject queryStringParameters = null,
             ExpandoObject body = null)
-        => ResponseApiMethodBuilder<TEntity>.Create(factory, queryStringParameters, body);
+            => ResponseApiMethodBuilder<TEntity>.Create(factory, queryStringParameters, body);
 
         public static ApiMethodBuilder CreateApiMethod(
             this IRequestBuilderFactory factory,
