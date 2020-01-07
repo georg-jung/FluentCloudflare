@@ -27,7 +27,7 @@ namespace FluentCloudflare.Api
         public void EnsureSuccess()
         {
             if (Errors?.FirstOrDefault() is Error err)
-                throw new ResponseHasErrorsException($"The response contained at least one error. First error: Code = {err.Code}, Message = {err.Message}", Errors);
+                throw new ResponseHasErrorsException($"The response contained at least one error. First error: Code = {err.Code}, Message = {err.Message}", Errors, StatusCode);
             if (!Success)
                 throw new CloudflareException("The request was not successfull (success = false).");
             if (StatusCode != HttpStatusCode.OK)
